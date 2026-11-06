@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080a10">
+<title>NULL — Connect Beyond Limits</title>
+<style>
+:root{--bg:#080a10;--panel:#111722;--panel2:#151d2b;--blue:#00d9ff;--pink:#ff36b7;--text:#f4f7fb;--muted:#9aa7ba;--line:#253247}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#102337 0,transparent 38%),radial-gradient(ellipse at 0% 45%,#21102b 0,transparent 30%),var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif}
+a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}.wrap{max-width:1120px;margin:auto;padding:0 22px}
+header{position:sticky;top:0;z-index:10;background:#080a10eF;border-bottom:1px solid #1d2a3a;backdrop-filter:blur(14px)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:950;font-size:27px;letter-spacing:3px}.brand span{color:var(--blue);text-shadow:0 0 18px #00d9ff88}.links{display:flex;gap:22px;align-items:center}.links a{font-size:13px;color:#c4cedb;font-weight:700;letter-spacing:.7px}.links a:hover{color:var(--blue)}.menu{display:none;background:none;border:1px solid var(--line);color:white;padding:8px 12px;border-radius:9px}
+.hero{padding:90px 0 64px;min-height:470px;display:flex;align-items:center}.eyebrow{color:var(--blue);font-size:12px;letter-spacing:4px;font-weight:800}.hero h1{font-size:clamp(54px,10vw,105px);line-height:.95;letter-spacing:-5px;margin:20px 0 16px;font-weight:950}.hero h1 span{color:var(--blue);text-shadow:0 0 32px #00d9ff55}.hero p{max-width:600px;color:#b3bfd0;font-size:17px;line-height:1.75}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{border:0;border-radius:9px;padding:13px 19px;font-weight:850;letter-spacing:.5px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.primary{background:var(--blue);color:#061018;box-shadow:0 0 25px #00d9ff30}.secondary{background:transparent;color:white;border:1px solid #43536a}.secondary:hover{border-color:var(--pink);color:var(--pink)}
+section{padding:54px 0;scroll-margin-top:80px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:24px}.kicker{color:var(--pink);font-size:11px;font-weight:900;letter-spacing:3px}.section-head h2{font-size:32px;margin:8px 0 0;letter-spacing:-1px}.sub{color:var(--muted);font-size:14px;line-height:1.6}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.tile,.card{background:linear-gradient(145deg,#151e2b,#0e141e);border:1px solid var(--line);border-radius:15px;padding:22px}.tile h3{margin:0 0 9px;font-size:18px}.tile p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}.tile .num{font-size:12px;color:var(--blue);letter-spacing:2px;font-weight:900;margin-bottom:18px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.field{width:100%;background:#090e17;border:1px solid #2a394d;border-radius:9px;padding:12px 13px;color:white;outline:none}.field:focus{border-color:var(--blue);box-shadow:0 0 0 3px #00d9ff16}.toolbar .field{max-width:340px}.empty{border:1px dashed #40516a;border-radius:14px;padding:34px;text-align:center;color:var(--muted);grid-column:1/-1}.empty strong{display:block;color:white;margin-bottom:8px}
+.status{font-size:11px;font-weight:900;letter-spacing:1px;color:#ff7bba}.tag{display:inline-block;padding:6px 9px;border:1px solid #3a2940;border-radius:20px;color:#ff82ca;font-size:10px;font-weight:900;letter-spacing:1px}
+form{display:grid;gap:12px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.fieldlabel{display:grid;gap:7px;color:#cbd5e1;font-size:13px;font-weight:700}.wide{grid-column:1/-1}textarea.field{min-height:95px;resize:vertical}.notice{font-size:12px;color:#91a0b4;line-height:1.6}.news-item{border-bottom:1px solid var(--line);padding:18px 0}.news-item:first-child{padding-top:0}.news-item h3{margin:7px 0}.news-item p{color:var(--muted);line-height:1.6;margin:0}.date{font-size:11px;color:var(--blue);letter-spacing:1px;font-weight:800}
+footer{border-top:1px solid var(--line);padding:28px 0;color:#8492a6;font-size:12px}.footerin{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.glow{color:var(--blue)}.pink{color:var(--pink)}.hidden{display:none!important}
+@media(max-width:760px){.links{display:none;position:absolute;top:72px;left:0;right:0;padding:18px 22px;background:#080a10;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.links.open{display:flex}.menu{display:block}.hero{padding:65px 0 45px;min-height:400px}.hero h1{letter-spacing:-3px}.grid{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.wide{grid-column:auto}.section-head{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#home">NULL<span>.</span></a>
+<button class="menu" id="menuBtn" aria-label="Mở menu">☰</button>
+<nav class="links" id="navLinks">
+<a href="#home">HOME</a><a href="#live">LIVE TIKTOK</a><a href="#news">NEWS</a><a href="#members">MEMBERS</a><a href="#register">REGISTER</a>
+</nav></div></header>
+<main>
+<div class="wrap">
+<section class="hero" id="home">
+<div><div class="eyebrow">COMMUNITY • CONNECTION • SUPPORT</div>
+<h1>CONNECT<br>BEYOND <span>LIMITS.</span></h1>
+<p>NULL là không gian kết nối cộng đồng TikTok LIVE — nơi các thành viên chia sẻ, hỗ trợ và cùng nhau phát triển.</p>
+<div class="actions"><a class="btn primary" href="#live">EXPLORE LIVE ↗</a><a class="btn secondary" href="#register">JOIN NULL</a></div>
+</div></section>
+<section>
+<div class="section-head"><div><div class="kicker">WHAT IS NULL</div><h2>Một cộng đồng. Nhiều kết nối.</h2></div><p class="sub">Cùng xuất hiện, cùng chia sẻ, cùng tiến lên.</p></div>
+<div class="grid">
+<div class="tile"><div class="num">01 / CONNECT</div><h3>Kết nối thành viên</h3><p>Tìm và ghé thăm những nhà sáng tạo đang hoạt động trên TikTok LIVE.</p></div>
+<div class="tile"><div class="num">02 / SUPPORT</div><h3>Hỗ trợ lẫn nhau</h3><p>Chia sẻ phiên LIVE và lan tỏa hoạt động tích cực trong cộng đồng.</p></div>
+<div class="tile"><div class="num">03 / UPDATE</div><h3>Cập nhật thông tin</h3><p>Theo dõi thông báo và tin tức chính thức từ ban quản trị NULL.</p></div>
+</div></section>
+<section id="live">
+<div class="section-head"><div><div class="kicker">LIVE DIRECTORY</div><h2>LIVE TIKTOK</h2><p class="sub">Danh sách tài khoản do quản trị viên xác nhận. Trạng thái được cập nhật thủ công.</p></div><span class="tag">COMMUNITY LIVE</span></div>
+<div class="toolbar"><input class="field" id="liveSearch" placeholder="Tìm tên hoặc @username..."></div>
+<div class="grid" id="liveList"><div class="empty"><strong>Chưa có tài khoản LIVE được đăng.</strong>Danh sách sẽ xuất hiện tại đây sau khi quản trị viên thêm thành viên.</div></div>
+</section>
+<section id="news">
+<div class="section-head"><div><div class="kicker">OFFICIAL UPDATES</div><h2>NEWS</h2><p class="sub">Tin tức và thông báo chính thức từ NULL.</p></div></div>
+<div class="card" id="newsList"><div class="empty"><strong>Chưa có thông báo mới.</strong>Tin tức sẽ được đăng tại đây.</div></div>
+</section>
+<section id="members">
+<div class="section-head"><div><div class="kicker">OUR COMMUNITY</div><h2>MEMBERS</h2><p class="sub">Những thành viên đã được xác nhận tham gia NULL.</p></div></div>
+<div class="grid" id="memberList"><div class="empty"><strong>Chưa có thành viên được công khai.</strong>Thành viên sẽ xuất hiện sau khi được quản trị viên duyệt.</div></div>
+</section>
+<section id="register">
+<div class="section-head"><div><div class="kicker">BECOME A MEMBER</div><h2>REGISTER</h2><p class="sub">Gửi thông tin để ban quản trị xem xét đăng ký tham gia cộng đồng.</p></div></div>
+<div class="card">
+<form id="registerForm"><div class="formgrid">
+<label class="fieldlabel">Tên hiển thị<input class="field" name="name" required maxlength="50" placeholder="Tên của bạn"></label>
+<label class="fieldlabel">TikTok username<input class="field" name="username" required maxlength="40" placeholder="@username"></label>
+<label class="fieldlabel wide">Link hồ sơ TikTok<input class="field" name="url" type="url" required placeholder="https://www.tiktok.com/@username"></label>
+<label class="fieldlabel wide">Lời nhắn (không bắt buộc)<textarea class="field" name="message" maxlength="300" placeholder="Giới thiệu ngắn về bạn..."></textarea></label>
+</div><button class="btn primary" type="submit">GỬI ĐĂNG KÝ ↗</button>
+<p class="notice" id="formMsg">Bản xem thử này lưu dữ liệu trên trình duyệt hiện tại, chưa gửi đến ban quản trị và chưa đồng bộ giữa các thiết bị.</p>
+</form></div>
+</section>
+</div></main>
+<footer><div class="wrap footerin"><span><b class="glow">NULL.</b> — CONNECT BEYOND LIMITS.</span><span>Community project · 2026</span></div></footer>
+<script>
+const $=s=>document.querySelector(s);
+$('#menuBtn').addEventListener('click',()=>$('#navLinks').classList.toggle('open'));
+document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>$('#navLinks').classList.remove('open')));
+const key='null_demo_registrations';
+$('#registerForm').addEventListener('submit',e=>{
+ e.preventDefault();const data=Object.fromEntries(new FormData(e.target).entries());
+ const list=JSON.parse(localStorage.getItem(key)||'[]');list.push({...data,created:new Date().toISOString()});
+ localStorage.setItem(key,JSON.stringify(list));e.target.reset();
+ $('#formMsg').textContent='Đã lưu bản đăng ký thử nghiệm trên trình duyệt này. Dữ liệu chưa được gửi đến quản trị viên.';
+});
+$('#liveSearch').addEventListener('input',()=>{
+ const q=$('#liveSearch').value.toLowerCase();
+ document.querySelectorAll('#liveList .live-card').forEach(c=>c.classList.toggle('hidden',!c.textContent.toLowerCase().includes(q)));
+});
+</script>
+</body></html>
